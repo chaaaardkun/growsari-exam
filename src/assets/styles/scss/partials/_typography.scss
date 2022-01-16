@@ -1,0 +1,40 @@
+body {
+  @apply font-body text-tertiary leading-6 antialiased;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  @apply font-bold font-body text-tertiary;
+}
+
+h1 {
+  @apply font-body text-5xl;
+}
+
+h2 {
+  @apply font-body text-4xl leading-[3rem];
+}
+
+h3 {
+  @apply text-2xl;
+}
+
+h4 {
+  @apply font-body font-bold text-lg;
+}
+
+hr {
+  @apply border-gray-500 border-t-2;
+}
+
+a {
+  @apply text-tertiary cursor-pointer no-underline;
+}
+
+p {
+  @apply text-sm text-secondary;
+}

@@ -1,0 +1,9 @@
+html, body, #root {
+  padding: 0px !important;
+  margin: 0px !important;
+  height: 100vh;
+}
+
+body {
+  @apply font-body;
+}

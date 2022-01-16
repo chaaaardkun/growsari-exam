@@ -1,0 +1,9 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import '../../fonts/nunito/stylesheet.css';
+
+@import './partials/root';
+@import './partials/typography';
+@import './partials/icon';
