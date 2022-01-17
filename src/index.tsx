@@ -1,4 +1,5 @@
 import ReactDOM from 'react-dom';
+import './assets/styles/tailwind.css';
 import './assets/styles/scss/main.scss';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import reportWebVitals from './reportWebVitals';

@@ -1,30 +1,16 @@
 import products from '@/assets/dummy/products';
+import Card from '@/components/templates/Card';
+import Hero from '@/components/templates/Hero';
 
 const Products = () => {
-  // const [error, setError] = useState(false);
-
-  // const onError = () => {
-  //   setError(true);
-  // };
-
   return (
-    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap:1 md:gap-8 mx-auto my-8">
-      {products.map((item) => (
-        <div className="card flex flex-col">
-          <div className="position-relative bg-placeholder">
-            {/* {!error ? (
-              <img src={member.image} alt={member.name} className="h-[17.5rem] w-[18.875rem]" onError={onError} />
-            ) : ( */}
-            <div className="h-[17.5rem] bg-gray-300 rounded-md w-full" />
-            {/* )} */}
-          </div>
-          <h3 className="py-2">{item.display_name}</h3>
-          <p>{item.price}</p>
-          <button type="button" className="bg-secondary p-2 text-white rounded-lg">
-            Add to Cart
-          </button>
-        </div>
-      ))}
+    <div>
+      <Hero />
+      <div className="grid grid-cols-1 px-4 sm:px-0 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8 mx-auto my-8">
+        {products.map((item) => (
+          <Card itemName={item.display_name} price={item.price} image="https://picsum.photos/300" />
+        ))}
+      </div>
     </div>
   );
 };

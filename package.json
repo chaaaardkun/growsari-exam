@@ -13,8 +13,10 @@
     "@types/node": "^12.20.37",
     "@types/react": "^17.0.37",
     "@types/react-dom": "^17.0.11",
+    "clsx": "^1.1.1",
     "craco-alias": "^3.0.1",
     "framer-motion": "^5.6.0",
+    "postcss-cli": "^9.1.0",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-hook-form": "^7.22.2",
@@ -26,12 +28,13 @@
     "web-vitals": "^1.1.2"
   },
   "scripts": {
-    "start": "craco start",
+    "start": "craco start && npm run watch:tailwind",
     "build": "craco build",
     "test": "craco test",
     "eject": "react-scripts eject",
     "eslint": "eslint '*/**/*.{js,ts,tsx}' --fix",
-    "lint": "npm -s run eslint && npm -s run type-check"
+    "lint": "npm -s run eslint && npm -s run type-check",
+    "watch:tailwind": "postcss -w src/assets/styles/tailwind.css -o src/assets/styles/tailwind.generated.css"
   },
   "eslintConfig": {
     "extends": [
@@ -64,7 +67,7 @@
     "eslint-plugin-prettier": "^4.0.0",
     "eslint-plugin-react": "^7.27.1",
     "eslint-plugin-react-hooks": "^4.3.0",
-    "postcss": "^7.0.39",
+    "postcss": "^8.4.5",
     "prettier": "2.5.1",
     "tailwindcss": "npm:@tailwindcss/postcss7-compat@^2.2.17"
   }
