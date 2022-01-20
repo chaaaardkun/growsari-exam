@@ -5,7 +5,7 @@ const AppContainer: React.FC = ({ children }) => {
   return (
     <div>
       <Header />
-      <div className="container m-auto">{children}</div>
+      <div className="container m-auto pt-20">{children}</div>
     </div>
   );
 };

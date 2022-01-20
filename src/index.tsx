@@ -2,32 +2,36 @@ import ReactDOM from 'react-dom';
 import './assets/styles/tailwind.css';
 import './assets/styles/scss/main.scss';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import { Provider } from 'react-redux';
 import reportWebVitals from './reportWebVitals';
 import AppContainer from '@/components/layouts/AppContainer';
 import Products from '@/pages/products';
 import ViewCart from '@/pages/view-cart';
+import { store } from '@/redux/store';
 
 ReactDOM.render(
-  <Router>
-    <Routes>
-      <Route
-        path="/"
-        element={
-          <AppContainer>
-            <Products />
-          </AppContainer>
-        }
-      />
-      <Route
-        path="/view-cart"
-        element={
-          <AppContainer>
-            <ViewCart />
-          </AppContainer>
-        }
-      />
-    </Routes>
-  </Router>,
+  <Provider store={store}>
+    <Router>
+      <Routes>
+        <Route
+          path="/"
+          element={
+            <AppContainer>
+              <Products />
+            </AppContainer>
+          }
+        />
+        <Route
+          path="/view-cart"
+          element={
+            <AppContainer>
+              <ViewCart />
+            </AppContainer>
+          }
+        />
+      </Routes>
+    </Router>
+  </Provider>,
   document.getElementById('root'),
 );
 
