@@ -1,5 +1,6 @@
 import { useSelector } from 'react-redux';
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import ShoppingCard from '@/components/templates/ShoppingCard';
 import { RootState } from '@/redux/store';
 import { ReactComponent as EmptyCart } from '@/assets/svg/empty-cart.svg';
@@ -9,6 +10,8 @@ const ViewCart = () => {
   const [total, setTotal] = useState<number>(0);
   const cart = useSelector((state: RootState) => state.app.cart);
 
+  const navigate = useNavigate();
+
   return (
     <div className="h-full my-4">
       <h2>Shopping Cart</h2>
@@ -16,7 +19,13 @@ const ViewCart = () => {
         {cart?.length === 0 ? (
           <div className="flex flex-col justify-center items-center mt-10">
             <EmptyCart className="icon text-9xl text-primary" />
-            <h4 className="text-secondary mt-8 h-">There are no orders placed yet.</h4>
+            <h4 className="text-secondary mt-8 mb-8">There are no orders placed yet.</h4>
+            <Button
+              type="button"
+              label="Continue Shopping"
+              className="bg-secondary p-2 text-white rounded-lg rounded-tr-3xl rounded-bl-3xl ease-in-out duration-300"
+              onClick={() => navigate('/')}
+            />
           </div>
         ) : (
           <>
